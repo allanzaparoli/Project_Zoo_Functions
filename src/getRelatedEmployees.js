@@ -20,7 +20,8 @@ function getRelatedEmployees(managerId) {
       return element.managers.find((gerenteId) => gerenteId === managerId)
     });
     return gerente.map((element) => `${element.firstName} ${element.lastName}`);
-  } else { 
+  } 
+  if (!resultado) { 
     throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
   };
 };

@@ -22,7 +22,4 @@ const countAnimals = (animal) => {
 };
 console.log(countAnimals());
 
-
 module.exports = countAnimals;
-
-/* um objeto com a chave 'specie', retorna um número, a quantidade de animais daquela espécie */
