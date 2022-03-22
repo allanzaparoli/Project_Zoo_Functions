@@ -7,6 +7,7 @@ const countAnimals = (animal) => {
     const resultado = {};
     species.forEach((element) => {
       resultado[element.name] = element.residents.length;
+      console.log(resultado);
     });
     return resultado;
   }
@@ -20,6 +21,6 @@ const countAnimals = (animal) => {
     return sex.length;
   }
 };
-console.log(countAnimals());
+console.log(countAnimals({ specie: 'giraffes', sex: 'female' }));
 
 module.exports = countAnimals;
