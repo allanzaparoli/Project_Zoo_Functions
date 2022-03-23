@@ -4,8 +4,8 @@ const { employees } = data;
 const isManager = (id) => {
   let result = false;
   employees.forEach((element) => {
-    element.managers.forEach((element) => {
-      if (element === id) {
+    element.managers.forEach((e) => {
+      if (e === id) {
         result = true;
       }
     });
@@ -16,9 +16,8 @@ const isManager = (id) => {
 function getRelatedEmployees(managerId) {
   const resultado = isManager(managerId);
   if (resultado) {
-    const gerente = employees.filter((element) => {
-      return element.managers.find((gerenteId) => gerenteId === managerId);
-    });
+    const gerente = employees.filter((element) =>
+      element.managers.find((gerenteId) => gerenteId === managerId));
     return gerente.map((element) => `${element.firstName} ${element.lastName}`);
   }
   if (!resultado) {
